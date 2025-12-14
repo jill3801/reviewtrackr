@@ -1,0 +1,62 @@
+/* Container area */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Card layout */
+.profile-card {
+  background: #0c0f16;
+  padding: 30px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00000050;
+  color: white;
+}
+
+.profile-card h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Inputs */
+.profile-card input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  background: #1a1f29;
+  color: white;
+  font-size: 15px;
+}
+
+/* Buttons */
+.full-btn {
+  width: 100%;
+}
+
+.btn-danger {
+  background: #e63946;
+  border: none;
+  padding: 10px 18px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background: #c71c30;
+}
+
+/* Small hero adjustment */
+.small-hero {
+  padding: 40px 0;
+}
+
+.small-hero h2 {
+  font-size: 30px;
+}

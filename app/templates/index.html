@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReviewTrackr – Movie Prediction Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+<script src="/scripts/main.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="row">
+        <span><h1>ReviewTracker</h1></span>
+        <span>
+          <button id="openLogin" class="btn-primary">Login</button>
+<button id="openSignup" class="btn-outline">Sign Up</button>
+<button id="profileBtn" onclick="window.location.href='/profile'" class="btn-outline hidden">
+  Profile
+</button>
+      </div>
+    </header>
+    <section class="hero">
+      <h2>Discover Movies</h2>
+      <p>Browse and review the latest movie</p>
+    </section>
+
+    <!-- Add this after your header/nav section -->
+<div style="text-align: center; margin: 30px 0;">
+  <button id="loadScrapedMovies" class="btn-primary" style="padding: 15px 40px; font-size: 18px; cursor: pointer;">
+    🔄 Load Latest Movies from IMDb
+  </button>
+</div>
+    
+
+
+    <!-- FILTERS -->
+    <section class="filters">
+      <div class="filter-group">
+        <button class="filter-btn">
+          Genre <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <div class="dropdown">
+          <p>All</p>
+          <p>Action</p>
+          <p>Romance</p>
+          <p>Comedy</p>
+          <p>Thriller</p>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="filter-btn">
+          Year <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <div class="dropdown">
+          <p>2026</p>
+          <p>2027</p>
+          <p>2028</p>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="filter-btn">
+          Sort By <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <div class="dropdown">
+          <p>Rating: High–Low</p>
+          <p>Rating: Low–High</p>
+          <p>Latest Releases</p>
+        </div>
+      </div>
+    </section>
+    <!-- SEARCH BAR -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by title, description, or year..."
+      />
+      <button id="searchBtn" class="btn-primary">Search</button>
+    </div>
+
+    <!-- MOVIE GRID -->
+    <section class="movie-grid" data-genre="Action" >
+      <!-- Card 1 -->
+      <div class="movie-card">
+<img src="/images/ramayana-et00451914-1751546901.avif" class="movie-poster" />        <div class="movie-info">
+          <h3>Ramayana (Part 1)</h3>
+          <p class="release-date">Releasing: Nov 2026</p>
+          <div class="movie-stats">
+            <span class="hit">Predicted Hit</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          
+            <textarea
+              class="comment-input hidden"
+              placeholder="Write a comment..."
+            ></textarea>
+
+            <button class="submit-comment hidden btn-primary">
+              Post Comment
+            </button>
+
+            <div class="comments"></div>
+          </div>
+        </div>
+
+      <!-- Card 2 -->
+      <div class="movie-card" data-genre="Comedy">
+<img src="/images/stree 3.jpg" class="movie-poster" />          <h3>Stree 3</h3>
+          <p class="release-date">Releasing: Aug 2026</p>
+          <div class="movie-stats">
+            <span class="hit">Predicted Hit</span>
+            <span class="rating">⭐ 4.6</span>
+          </div>
+          
+
+            <textarea
+              class="comment-input hidden"
+              placeholder="Write a comment..."
+            ></textarea>
+
+            <button class="submit-comment hidden btn-primary">
+              Post Comment
+            </button>
+
+            <div class="comments"></div>
+          
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="movie-card" data-genre="Thriller">
+<img src="/images/csm.webp" class="movie-poster" />          <h3>CSM</h3>
+          <p class="release-date">Releasing: Nov 2026</p>
+          <div class="movie-stats">
+            <span class="hit">Predicted flop</span>
+            <span class="rating">⭐ 1.8</span>
+          </div>
+          
+            <textarea
+              class="comment-input hidden"
+              placeholder="Write a comment..."
+            ></textarea>
+
+            <button class="submit-comment hidden btn-primary">
+              Post Comment
+            </button>
+
+            <div class="comments"></div>
+          </div>
+        
+      </div>
+
+      <!-- Card 4 -->
+      <div class="movie-card" data-genre="Comedy">
+<img src="/images/dhamaal4.jpg" class="movie-poster" />          <h3>dhamaal 4</h3>
+          <p class="release-date">Releasing: Nov 2026</p>
+          <div class="movie-stats">
+            <span class="hit">Predicted Hit</span>
+            <span class="rating">⭐ 5.0</span>
+          </div>
+          
+
+            <textarea
+              class="comment-input hidden"
+              placeholder="Write a comment..."
+            ></textarea>
+
+            <button class="submit-comment hidden btn-primary">
+              Post Comment
+            </button>
+
+            <div class="comments"></div>
+          </div>
+        
+      </div>
+
+      <!-- Card 5 -->
+      <div class="movie-card" data-genre="Romance">
+<img src="/images/munjiya.jpg" class="movie-poster" />          <h3>munjiya</h3>
+          <p class="release-date">Releasing: Nov 2026</p>
+          <div class="movie-stats">
+            <span class="hit">Predicted flop</span>
+            <span class="rating">⭐ 1.5</span>
+          </div>
+          
+            <textarea
+              class="comment-input hidden"
+              placeholder="Write a comment..."
+            ></textarea>
+
+            <button class="submit-comment hidden btn-primary">
+              Post Comment
+            </button>
+
+            <div class="comments"></div>
+          </div>
+        
+      </div>
+
+      <!--card 6-->
+      <div class="movie-card" data-genre="Action">
+<img src="/images/war3.webp" class="movie-poster" />          <h3>War 3</h3>
+          <p class="release-date">Releasing: Nov 2026</p>
+          <div class="movie-stats">
+            <span class="hit">Predicted Hit</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          
+
+            <textarea
+              class="comment-input hidden"
+              placeholder="Write a comment..."
+            ></textarea>
+
+            <button class="submit-comment hidden btn-primary">
+              Post Comment
+            </button>
+
+            <div class="comments"></div>
+          </div>
+        </div>
+        <!-- Card 7 - Avengers: Secret Wars -->
+<div class="movie-card" data-genre="Action">
+  <img src="/images/avengers secret war.jpg" class="movie-poster" />
+  <div class="movie-info">
+    <h3>Avengers: Secret Wars</h3>
+    <p class="release-date">Releasing: May 2027</p>
+    <div class="movie-stats">
+      <span class="hit">Predicted Hit</span>
+      <span class="rating">⭐ 4.9</span>
+    </div>
+    <textarea class="comment-input hidden" placeholder="Write a comment..."></textarea>
+    <button class="submit-comment hidden btn-primary">Post Comment</button>
+    <div class="comments"></div>
+  </div>
+</div>
+<!-- Card 8 -->
+<div class="movie-card" data-genre="Thriller">
+  <img src="/images/scream 7.jpg" class="movie-poster" />
+  <div class="movie-info">
+    <h3>Scream 7</h3>
+    <p class="release-date">Releasing: Oct 2026</p>
+    <div class="movie-stats">
+      <span class="hit">Predicted Hit</span>
+      <span class="rating">⭐ 4.2</span>
+    </div>
+    <textarea class="comment-input hidden" placeholder="Write a comment..."></textarea>
+    <button class="submit-comment hidden btn-primary">Post Comment</button>
+    <div class="comments"></div>
+  </div>
+</div>
+
+<!-- Card 9 -->
+<div class="movie-card" data-genre="Comedy">
+  <img src="/images/shrek 5.jpg" class="movie-poster" />
+  <div class="movie-info">
+    <h3>Shrek 5</h3>
+    <p class="release-date">Releasing: Aug 2026</p>
+    <div class="movie-stats">
+      <span class="hit">Predicted Flop</span>
+      <span class="rating">⭐ 2.1</span>
+    </div>
+    <textarea class="comment-input hidden" placeholder="Write a comment..."></textarea>
+    <button class="submit-comment hidden btn-primary">Post Comment</button>
+    <div class="comments"></div>
+  </div>
+</div>
+
+<!-- Card 10 -->
+<div class="movie-card" data-genre="Action">
+  <img src="/images/the odyssey.jpg" class="movie-poster" />
+  <div class="movie-info">
+    <h3>The Odyssey</h3>
+    <p class="release-date">Releasing: Aug 2026</p>
+    <div class="movie-stats">
+      <span class="hit">Predicted hit</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <textarea class="comment-input hidden" placeholder="Write a comment..."></textarea>
+    <button class="submit-comment hidden btn-primary">Post Comment</button>
+    <div class="comments"></div>
+  </div>
+</div>
+
+      
+    </section>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <button class="page-btn">◀</button>
+      <button class="page-number active">1</button>
+      <button class="page-number">2</button>
+      <button class="page-number">3</button>
+      <button class="page-btn">▶</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© ReviewTracker</p>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal hidden">
+      <div class="modal-box">
+        <h3>Login</h3>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button class="btn-primary">Login</button>
+        <button id="closeLogin" class="btn-cancel">Close</button>
+      </div>
+    </div>
+
+    <!-- SIGNUP MODAL -->
+    <div id="signupModal" class="modal hidden">
+      <div class="modal-box">
+        <h3>Create Account</h3>
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button class="btn-primary">Sign Up</button>
+        <button id="closeSignup" class="btn-cancel">Close</button>
+      </div>
+    </div>
+   <!-- Custom Alert Modal -->
+<div id="customAlert" class="custom-alert">
+  <div class="custom-alert-box">
+    <div id="alertIcon" class="custom-alert-icon">🔒</div>
+    <h3 id="alertTitle" class="custom-alert-title">Login Required</h3>
+    <p id="alertMessage" class="custom-alert-message">You must login to comment.</p>
+    <button class="custom-alert-btn" onclick="closeCustomAlert()">Got it!</button>
+  </div>
+</div> 
+  </body>
+</html>
